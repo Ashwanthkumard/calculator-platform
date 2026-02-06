@@ -1,0 +1,18 @@
+pipeline:
+  name: Deploy Calculator Service
+  identifier: deploy_calculator_service
+  stages:
+    - stage:
+        name: Deploy to GKE
+        identifier: deploy_to_gke
+        type: CD
+        spec:
+          steps:
+            - step:
+                type: K8sApply
+                name: Apply Manifests
+                spec:
+                  filePaths:
+                    - kubernetes/deployment.yaml
+                    - kubernetes/service.yaml
+                    - kubernetes/ingress.yaml

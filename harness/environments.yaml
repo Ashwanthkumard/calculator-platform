@@ -1,0 +1,9 @@
+environments:
+  - name: dev
+    type: PreProduction
+    variables:
+      ENVIRONMENT: dev
+  - name: prod
+    type: Production
+    variables:
+      ENVIRONMENT: prod

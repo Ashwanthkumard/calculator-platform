@@ -1,0 +1,18 @@
+pipeline:
+  name: Build Calculator Service
+  identifier: build_calculator_service
+  stages:
+    - stage:
+        name: Build & Push
+        identifier: build_and_push
+        type: CI
+        spec:
+          steps:
+            - step:
+                type: BuildAndPushDockerRegistry
+                name: Build and Push to GAR
+                spec:
+                  connectorRef: <HARNESS_GCP_CONNECTOR>
+                  repo: <GAR_REPO_PLACEHOLDER>
+                  tags:
+                    - <TAG_PLACEHOLDER>
